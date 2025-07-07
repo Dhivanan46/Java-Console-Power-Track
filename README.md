@@ -8,38 +8,26 @@
 
 # Tech stack
 Frontend (Console Interface)
-•	Java – Console-based user interaction and application logic
+* Java – Console-based user interaction and application logic
+
 Backend
-•	PHP – API scripts for handling HTTP requests from IoT and interacting with the database
-•	Apache – Web server to host PHP scripts
+* PHP – API scripts for handling HTTP requests from IoT and interacting with the database
+* Apache – Web server to host PHP scripts
+
 Database
-•	MySQL – Stores users, appliances, power usage logs, alerts
+* MySQL – Stores users, appliances, power usage logs, alerts
+
 Networking & Protocols
-•	HTTP/HTTPS – Communication between IoT, server, and Telegram
-•	TCP/IP – Base protocol for network communication
-•	JDBC (TCP Port 3306) – Java to MySQL connection
+* HTTP/HTTPS – Communication between IoT, server, and Telegram
+* TCP/IP – Base protocol for network communication
+* JDBC (TCP Port 3306) – Java to MySQL connection
+
 Notification System
-•	Telegram Bot API – Sends alerts to users via Telegram
+* Telegram Bot API – Sends alerts to users via Telegram
 
 
 # ER Diagram:
 ![image](https://github.com/user-attachments/assets/928c4b33-df9a-4a61-aeb7-e61b77b7b19a)
-
-
-# Data Flow Summary:
-[IOT → PHP API] → Apache (HTTP)
-        ↓
-     MySQL DB
-        ↑
-  [Java Console via JDBC]
-        ↓
-   Inserts alert to DB
-        ↑
-  [PHP Script Reads Alert]
-        ↓
-[Telegram Bot API via HTTPS]
-        ↓
-   User receives alert 📲
 
 
 # Components:
