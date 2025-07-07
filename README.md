@@ -1,11 +1,46 @@
 # Power-Track || Java Embedded
-* A product designed to monitor and analyze the power usage of individual appliances in real time and push the data to SQL DB. 
-* Users can set a budget to receive alerts when usage exceeds their limit and get personalized suggestions through java console that helps to reduse consumption and stay within their budget.
-* user can control the appliance(on/off) through telegram bot.
+* A Hardware is designed to measure the power usage of individual appliances in real time and push the data to SQL DB.
+* Power Track is a Java-based console application designed to help users monitor and manage the power consumption of their household or office appliances.
+* The system allows users to register appliances, track real-time energy usage, set monthly power budgets, and receive alerts when consumption exceeds the defined limit.
+* It also provides helpful suggestions to reduce power usage, promoting energy efficiency and cost savings.
+* User can control the appliance(on/off) through telegram bot.
 
-# Block Diagram:
 
-![image](https://github.com/user-attachments/assets/729b095c-a384-42e1-8705-2fea274eeda1)
+# Tech stack
+Frontend (Console Interface)
+•	Java – Console-based user interaction and application logic
+Backend
+•	PHP – API scripts for handling HTTP requests from IoT and interacting with the database
+•	Apache – Web server to host PHP scripts
+Database
+•	MySQL – Stores users, appliances, power usage logs, alerts
+Networking & Protocols
+•	HTTP/HTTPS – Communication between IoT, server, and Telegram
+•	TCP/IP – Base protocol for network communication
+•	JDBC (TCP Port 3306) – Java to MySQL connection
+Notification System
+•	Telegram Bot API – Sends alerts to users via Telegram
+
+
+# ER Diagram:
+![image](https://github.com/user-attachments/assets/928c4b33-df9a-4a61-aeb7-e61b77b7b19a)
+
+
+# Data Flow Summary:
+[IOT → PHP API] → Apache (HTTP)
+        ↓
+     MySQL DB
+        ↑
+  [Java Console via JDBC]
+        ↓
+   Inserts alert to DB
+        ↑
+  [PHP Script Reads Alert]
+        ↓
+[Telegram Bot API via HTTPS]
+        ↓
+   User receives alert 📲
+
 
 # Components:
 * ESP32 
